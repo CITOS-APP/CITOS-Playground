@@ -1,0 +1,7 @@
+citos_env
+.vagrant/*
+roles/*
+*.log
+*.retry
+.vscode
+sync_dir/CITOS-server
