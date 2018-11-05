@@ -9,7 +9,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     local.vm.hostname = "local"
     local.vm.box = "ubuntu/bionic64"
     local.vm.network "private_network", ip: "192.168.99.50"
-    local.vm.network :forwarded_port, guest: 3000, host: 3000
+    #local.vm.network :forwarded_port, guest: 3000, host: 3000
     local.vm.provision "shell", path: "provision.sh"
     local.vm.synced_folder "sync_dir/", "/home/vagrant/test"
     local.ssh.forward_agent = true
@@ -31,7 +31,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     db.vm.hostname = "db"
     db.vm.box = "ubuntu/bionic64"
     db.vm.network "private_network", ip: "192.168.99.100"
-    db.vm.network :forwarded_port, guest: 8000, host: 8000
+    #db.vm.network :forwarded_port, guest: 8000, host: 8000
     db.vm.provision "shell", path: "provision.sh"
     db.vm.synced_folder "sync_dir/", "/home/vagrant/test"
     db.vm.provider "virtualbox" do |vb|
